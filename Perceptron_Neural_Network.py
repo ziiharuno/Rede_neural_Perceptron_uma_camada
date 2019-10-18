@@ -7,7 +7,7 @@ class perceptron():
     def __init__(self,learning_rate=0.01, num_treinos=50):
         #Taxa de aprendizagem 
         self.learning_rate = learning_rate 
-        #Numero de interações na rede
+        #Número de interações na rede
         self.num_treinos = num_treinos
      
     def train(self, treino_entradas, treino_saidas):
@@ -28,7 +28,7 @@ class perceptron():
 
         return self
         
-    #funcao de ativacao
+    #função de ativação
     def sigmoid(self,y): 
         return 1 / (1 + np.exp(-y))
     
@@ -36,11 +36,11 @@ class perceptron():
         y =  np.dot(entrada, self.peso_sinaptico[1:])
         return self.sigmoid(y)
 
-    #classificacao, retorna 1 caso funcao de ativacao > 0.5, caso contrario retorn -1
+    #classificação, retorna 1 caso função de ativação > 0.5, caso contrário retorn -1
     def think(self, entradas):
         return np.where(self.activation(entradas) > 0.5, 1, -1)
     
-    #faz a contagem de previsao por acerto, retornando no final a porcentagem de acerto
+    #faz a contagem de previsão por acerto, retornando no final a porcentagem de acerto
     def acuracia(self,entradas,saidas):
         i=count=0
         for x,y in zip(entradas,saidas):
@@ -60,7 +60,7 @@ if __name__ == "__main__":
     #lendo os dados 
     df= pd.read_csv("iris.csv")
     
-    #Separando 70% das as entradas e saidas para treinar a rede 
+    #Separando 70% das as entradas e saídas para treinar a rede 
     entradas_treinar = df.iloc[0:35,[0,1,2,3]]
     entradas_treinar= entradas_treinar.append(df.iloc[50:85,[0,1,2,3]], ignore_index=True).values
 
@@ -69,7 +69,7 @@ if __name__ == "__main__":
     #binarizando Setosa para -1 e Versicolor para 1
     saidas_treinar = np.where(saidas_treinar == 'Setosa', -1, 1)
 
-    #Separando os 30% restantes das as entradas e saidas para testes e acurácia
+    #Separando os 30% restantes das as entradas e saídas para testes e acurácia
     entradas_teste = df.iloc[35:50,[0,1,2,3]]
     entradas_teste = entradas_teste.append(df.iloc[85:100,[0,1,2,3]], ignore_index=True).values
     

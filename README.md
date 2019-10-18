@@ -6,7 +6,7 @@ Foi implementado uma Rede Neural Artificial Perceptron de uma camada no modelo:
     <img src="Perceptron.png" width="364" />
 </p>
 
-a rede foi construido com base no problema de classificação de flores do classico dataset Iris, onde foi limitado a classificação para somente Setosa ou Versicolor.
+A rede foi construída baseada no problema de classificação de flores do classico dataset Iris, onde foi limitado a classificação para somente Setosa ou Versicolor.
 </p>
 
-Para executar basta compilar em qualquer editor com a versão python 3 ou mais e ter o pandas também instalado.
+Para executar, basta compilar em qualquer editor com a versão Python 3 ou mais, além de ter o Pandas também instalado.
